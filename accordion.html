@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A jQuery Accordion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        main {width: 500px; border-radius: 5px; outline: solid 1px black; padding: 3px 10px;}
+        dt   {border-radius: 10px; background: orchid; padding-left: 25px; margin-top:3px}
+        a    {color:white; text-decoration: none; font-size: 1.25em}
+    </style>
+        
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+    $(function(){
+    
+        var allPanels = $('#accordion > dd').hide();
+        var allHeadings = $("#accordion > dt");
+        
+        $('#accordion > dt > a').on("click", function() {
+            allPanels.slideUp();
+            allHeadings
+                .css("background", "orchid")
+                .css("border-radius","10px");
+            $(this).parent().next().slideDown();
+            $(this).parent().css("background", "deeppink");
+            $(this).parent().css("border-radius", "10px 10px 0 0");
+            $(this).children().css("class", "fa fa-minus");
+        
+        });
+
+    });//--end ready function
+    </script>
+</head>
+<body>
+    <main>
+        <dl id="accordion">
+           
+            <dt><a href="#"><i class="fa fa-plus fa-fw"></i> Michael Caine</a></dt>
+            <dd>You wouldn't hit a man with no trousers on, would you? yes, i used a machine gun. your were only supposed to blow the bloody doors off.</dd>
+            
+            <dt><a href="#"><i class="fa fa-plus fa-fw"></i> Jim Carrey</a></dt>
+            <dd>Good morning, oh in case i don't see you, good afternoon, good evening and goodnight. your entrance was good, his was better. kinda hot in these rhinos. alrighty then.</dd>
+        
+        
+        <dt><a href="#"><i class="fa fa-plus fa-fw"></i> Morgan Freeman</a></dt>
+        <dd>Hope is a dangerous thing. hope can drive a man insane. mister wayne, if you don't want to tell me exactly what you're doing, when i'm asked, i don't have to lie. but don't think of me as an idiot.</dd>
+        
+        <dt><a href="#"><i class="fa fa-plus fa-fw"></i> Christopher Walken</a></dt>
+        <dd>What do you want me to say, that i'm sorry? that i apologize? well, people in hell want ice water, pal. i'm neglecting my other guests. e</dd>
+        
+        </dl>
+    </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lab 2 - Calculator III</title>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          
+//2 Using jQuery make each button the same width and height, give each button a unique background color, border style, width and color. Also, give the display a unique background color, set the font color and size, and set a unique border style, width, and color.
+
+          $("div#container input")
+            .css("width", "40px")
+            .css("height", "40px")
+            .css("margin", "2px")
+            .css("background", "darkturquoise")
+            .css("border", "solid 1px cornflowerblue")
+           
+           $("#result")
+            .css("background", "lightyellow")
+            .css("border", "dotted 2px darkgoldenrod")
+            .css("color", "darkgoldenrod")
+            .css("font-size", "16px")
+          
+//3.       Reference the “bubble capture” code from assignment 6. Rewrite this code so that it uses jQuery events and makes use of jQuery DOM manipulation techniques to set the display based on button selections made.
+           
+      
+           
+           //calculator.addEventListener("click",function(e){enter(e.target.value)}, false);
+         $("#container").on("click", function(e){
+             enter(e.target.value)
+         });
+          function enter(val){
+        result.value += val;
+        }; 
+          
+           //equal.addEventListener("click", calculate, false);
+        $("#equal").on("click", function(){
+            $("#result").value = eval($("#result").value)
+        });
+        
+  
+     
+    
+    
+    //function calculate(){result.value = eval(result.value);};
+          
+      });//---end of ready function
+    </script>
+    
+    <style>
+        p{border-style:}
+    </style>
+</head>
+
+<body>
+	<input type="text" readonly id="result">
+    <br>
+    <div id="container">
+        <input type="button" id="seven" value="7">
+        <input type="button" id="eight" value="8">
+        <input type="button" id="nine" value="9">
+        <input type="button" id="divide" value="/">
+        <br>
+        <input type="button" id="four" value="4">
+        <input type="button" id="five" value="5">
+        <input type="button" id="six" value="6">
+        <input type="button" id="multiply" value="*">
+        <br>
+        <input type="button" id="one" value="1">
+        <input type="button" id="two" value="2">
+        <input type="button" id="three" value="3">
+        <input type="button" id="subtract" value="-">
+        <br>
+        <input type="button" id="zero" value="0">
+        <input type="button" id="period" value=".">
+        <input type="button" id="add" value="+">
+        <input type="button" id="equal" value="=">
+        </div>
+</body>
+</html>

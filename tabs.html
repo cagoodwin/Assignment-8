@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A jQuery Tabbed Menu Bar (10 points)</title>
+    <style>
+        *                {padding: 0; margin: 0}
+        body             {font-family: sans-serif; font-size: 1em}
+        nav              {height: 30px; margin: 0; padding: 0;}
+        nav ul           {padding-top: 8px;}
+        nav ul li        {display: inline; padding: 5px; border-radius:4px 4px 0 0; background:cornflowerblue;}
+        nav ul li a      {color:white; text-decoration: none;}
+        #container       {width: 500px; padding: 10px; background:lightgrey; border-radius: 4px; margin: 20px}
+        section          {margin: 0; padding: 0;background: white; border-radius: 3px}
+        p                {padding: 7px;}
+        
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function(){
+            $("section + section").hide();
+            
+            $("#aSoft a").on("click", function(){
+                //resets other tabs
+                $("section section").hide();
+                $("a").css("color", "white");
+                $("li").css("background", "cornflowerblue");
+                
+                //highlight selected tab
+                $("section#soft")
+                    .show()
+                    .css("background", "white");
+                $("#aSoft a")
+                    .css("color", "cornflowerblue");
+                $("li#aSoft")
+                    .css("background", "white");
+            });
+            
+            $("#aHard a").on("click", function(){
+                $("section section").hide();
+                $("a").css("color", "white");
+                $("li").css("background", "cornflowerblue");
+                
+                $("section#hard")
+                    .show()
+                    .css("background", "white");
+                $("#aHard a")
+                    .css("color", "cornflowerblue");
+                $("li#aHard")
+                    .css("background", "white");
+            });
+            
+            $("#aStinky a").on("click", function(){
+                $("section section").hide();
+                $("a").css("color", "white");
+                $("li").css("background", "cornflowerblue");
+                
+                $("section#stinky")
+                    .show()
+                    .css("background", "white");
+                $("#aStinky a")
+                    .css("color", "cornflowerblue");
+                $("li#aStinky")
+                    .css("background", "white");
+            });
+            
+        });//----end of ready function
+    </script>
+    
+    
+</head>
+<body>
+    <section id="container">
+        <nav>
+            <ul>
+                <li id="aSoft"><a href="#" value="soft">Soft Cheese</a></li>
+                <li id="aHard"><a href="#" value="hard">Hard Cheese</a></li>
+                <li id="aStinky"><a href="#" value="stinky">Stinky Cheese</a></li>
+            </ul>
+        </nav>
+        
+            <section id="soft">
+                <p>I love cheese, especially cottage cheese taleggio. Bocconcini cheeseburger hard cheese cheeseburger cauliflower cheese blue castello gouda squirty cheese. Roquefort monterey jack pepper jack edam pepper jack everyone loves red leicester port-salut. Brie roquefort caerphilly fondue feta cheese strings. Gouda stinking bishop stilton. Everyone loves goat cheeseburger roquefort jarlsberg everyone loves cheese strings rubber cheese. Gouda jarlsberg blue castello goat port-salut danish fontina stinking bishop cheddar. Rubber cheese airedale cheddar pecorino cheese strings fromage frais red leicester red leicester. Stilton stilton jarlsberg pecorino.</p>
+            </section>
+            
+            <section id="hard">
+                <p>Pecorino emmental cheesy feet. St. agur blue cheese squirty cheese ricotta fromage cheddar chalk and cheese cheeseburger cheese and wine. Ricotta manchego lancashire goat caerphilly bocconcini cheese and biscuits caerphilly. Paneer swiss cheddar melted cheese roquefort st. agur blue cheese emmental when the cheese comes out everybody's happy. Parmesan. Rubber cheese mascarpone boursin. Red leicester cheese strings cheddar port-salut cream cheese say cheese cheesy feet cheesecake. Emmental camembert de normandie cheese strings port-salut halloumi cheeseburger squirty cheese edam. Fondue fromage cauliflower cheese brie lancashire macaroni cheese.</p>
+            </section>
+            
+            <section id="stinky">
+                <p>Macaroni cheese cottage cheese emmental. Taleggio everyone loves taleggio edam macaroni cheese hard cheese paneer macaroni cheese. Camembert de normandie who moved my cheese when the cheese comes out everybody's happy blue castello bocconcini everyone loves stilton say cheese. Swiss fromage frais st. agur blue cheese cheese triangles jarlsberg hard cheese cheese and wine hard cheese. Roquefort paneer roquefort.</p>
+            </section>
+       
+    </section>
+    
+</body>
+
+</html>
